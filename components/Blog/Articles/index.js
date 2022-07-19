@@ -4,7 +4,6 @@ import styles from "./article.module.scss";
 //import { Search } from "@un/react";
 import Link from "next/link";
 
-import Search from "../../Search";
 import { useTranslation } from "next-i18next";
 import { getCategories } from "../../../lib/api";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -31,9 +30,7 @@ const Articles = ({ articles, meta }) => {
 
   return (
     <div>
-      <div className={styles.searchWrapper}>
-        <Search />
-      </div>
+      <div className={styles.searchWrapper}></div>
 
       <h2 className={styles.topic}>All about {meta.topic}</h2>
       <p className={styles.summary}> {meta.summary}</p>

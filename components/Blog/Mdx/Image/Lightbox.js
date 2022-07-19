@@ -1,11 +1,11 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { motion, useDomEvent, useMotionValue } from 'framer-motion';
-import styles from './lightbox.module.scss';
-import { useGesture } from 'react-use-gesture';
-import Image from 'next/image';
+import React, { useEffect, useState, useRef } from "react";
+import { motion, useDomEvent, useMotionValue } from "framer-motion";
+import styles from "./lightbox.module.scss";
+import { useGesture } from "react-use-gesture";
+import Image from "next/image";
 
 const transition = {
-  type: 'spring',
+  type: "spring",
   damping: 25,
   stiffness: 120,
 };
@@ -16,8 +16,8 @@ const Lightbox = (props) => {
 
   const scale = useMotionValue(1);
 
-  if (typeof window != 'undefined')
-    useDomEvent(useRef(window), 'scroll', () => isOpen && setOpen(false));
+  //if (typeof window != 'undefined')
+  useDomEvent(useRef(window), "scroll", () => isOpen && setOpen(false));
 
   useGesture(
     {
@@ -41,7 +41,7 @@ const Lightbox = (props) => {
   );
 
   return (
-    <span className={`${styles.imageContainer} ${isOpen ? styles.open : ''}`}>
+    <span className={`${styles.imageContainer} ${isOpen ? styles.open : ""}`}>
       <span className={`${styles.imageWrapper}`}>
         <span
           className={`${styles.aspectRatio}`}
@@ -68,7 +68,8 @@ const Lightbox = (props) => {
           animate={{ opacity: isOpen ? 1 : 0 }}
           transition={transition}
           className={styles.shade}
-          onClick={() => setOpen(false)}></motion.span>
+          onClick={() => setOpen(false)}
+        ></motion.span>
         <motion.span
           {...props}
           ref={domTarget}
@@ -78,10 +79,11 @@ const Lightbox = (props) => {
           style={{
             scale,
             aspectRatio: `${props.width} / ${props.height}`,
-          }}>
+          }}
+        >
           <Image
             {...props}
-            sizes={isOpen ? ' 100vw' : '(max-width: 710px) 100vw, 868px'}
+            sizes={isOpen ? " 100vw" : "(max-width: 710px) 100vw, 868px"}
           />
         </motion.span>
       </span>
