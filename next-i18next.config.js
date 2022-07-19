@@ -6,12 +6,6 @@ const axios = require("axios");
 const isBrowser = typeof window !== "undefined";
 
 const locales = ["en", "fr", "de" /*"it"*/];
-/*const locizeOptions = {
-  projectId: "63b1dcf8-5fc4-40d5-a80a-22844c993ae7",
-  apiKey: "0a48781f-1d27-4c66-a50a-11dff66062e4",
-  version: "latest",
-};
-*/
 
 const loadResources = async (language, namespace, url, options, payload) => {
   const response = await axios({
