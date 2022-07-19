@@ -1,29 +1,18 @@
-# README #
+# README
 
-This README would normally document whatever steps are necessary to get your application up and running.
+AI website generator using GPT-3 and Midjourney. Just enter some keywords to create a website.
 
-### What is this repository for? ###
+### Run website
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+```
+npm install
+npm run dev
+```
 
-### How do I get set up? ###
+### Generate stucture:
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+`http://localhost:3001/api/structure?topic=Umzug, nachhaltiger Werkzeugverleih, Werkzeugkisten`
 
-### Contribution guidelines ###
+### Generate a post:
 
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+`http://localhost:3001/api/post?title=Tipps für einen erfolgreichen Umzug`
